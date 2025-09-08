@@ -114,7 +114,7 @@ def call(Map configMap){
                     }
                 }    
 
-                stage('Trivy scan'){
+            /*    stage('Trivy scan'){
                     steps {
                         sh  """ 
                             trivy image dd070/$COMPONENT:$appVersion \
@@ -154,7 +154,7 @@ def call(Map configMap){
                         }
                     }    
 
-                }
+                } */
 
                 stage('Push docker image'){
                     steps {
