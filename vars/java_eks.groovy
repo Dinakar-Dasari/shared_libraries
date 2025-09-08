@@ -14,7 +14,7 @@ def call(Map configMap){
                 COMPONENT = configMap.get("component")
                 REGION = 'us-east-1'
                 ACC_ID = '127218179061'
-                URL = configMap.get('url')
+                git_repo = configMap.get('url')
             }
 
             parameters{
