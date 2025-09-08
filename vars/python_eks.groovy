@@ -4,7 +4,7 @@ def call(Map configMap){
                 label 'agent-1'
             }
             tools {
-                nodejs 'python-3.10'
+                python 'python-3.10'
             }
 
             environment {
@@ -14,6 +14,7 @@ def call(Map configMap){
                 COMPONENT = configMap.get("component")
                 REGION = 'us-east-1'
                 ACC_ID = '127218179061'
+                git_repo = configMap.get('url')
             }
 
             parameters{
@@ -34,7 +35,7 @@ def call(Map configMap){
 
                 stage('git checkout') {
                     steps {
-                        git branch: 'main', url: 'https://github.com/Dinakar-Dasari/jenkins_latest.git'
+                        git branch: 'main', url: "${git_repo}"
                     }
                 }
 
@@ -112,7 +113,7 @@ def call(Map configMap){
                     }
                 }    
 
-                stage('Trivy scan'){
+               /* stage('Trivy scan'){
                     steps {
                         sh  """ 
                             trivy image dd070/$COMPONENT:$appVersion \
@@ -152,7 +153,7 @@ def call(Map configMap){
                         }
                     }    
 
-                }
+                } */
 
                 stage('Push docker image'){
                     steps {
