@@ -14,6 +14,7 @@ def call(Map configMap){
                 COMPONENT = configMap.get("component")
                 REGION = 'us-east-1'
                 ACC_ID = '127218179061'
+                URL = configMap.get('url')
             }
 
             parameters{
@@ -34,7 +35,7 @@ def call(Map configMap){
 
                 stage('git checkout') {
                     steps {
-                        git branch: 'main', url: 'https://github.com/Dinakar-Dasari/jenkins_latest.git'
+                        git branch: 'main', url: "${URL}"
                     }
                 }
 
