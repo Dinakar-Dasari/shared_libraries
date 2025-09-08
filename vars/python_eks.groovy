@@ -3,9 +3,6 @@ def call(Map configMap){
             agent {
                 label 'agent-1'
             }
-            tools {
-                jenkins.plugins.shiningpanda.tools.PythonInstallation('python-3.10')
-            }
 
             environment {
                 appVersion=''
