@@ -4,7 +4,7 @@ def call(Map configMap){
                 label 'agent-1'
             }
             tools {
-                jenkins.plugins.shiningpanda.tools.PythonInstallation 'python-3.10'
+                jenkins.plugins.shiningpanda.tools.PythonInstallation('python-3.10')
             }
 
             environment {
