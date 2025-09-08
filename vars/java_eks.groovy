@@ -35,7 +35,7 @@ def call(Map configMap){
 
                 stage('git checkout') {
                     steps {
-                        git branch: 'main', url: "${URL}"
+                        git branch: 'main', url: "${git_repo}"
                     }
                 }
 
