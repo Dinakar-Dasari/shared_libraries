@@ -4,7 +4,7 @@ def call(Map configMap){
                 label 'agent-1'
             }
             tools {
-                nodejs 'maven'
+                maven 'maven'
             }
 
             environment {
