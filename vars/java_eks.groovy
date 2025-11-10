@@ -52,7 +52,11 @@ def call(Map configMap){
                 }  
                 stage('install dependencies') {
                     steps{
-                        sh 'mvn clean package'
+                        // sh 'mvn clean package'
+                        sh 'mvn clean test' // will downloads dependencies, compiles, and runs tests.
+                    // mvn clean package command is present in both CI and dockerfile
+                    // In CI, you can skip packaging inside Jenkins if Dockerfile does it.
+                    // Instead, just verify version & tests in Jenkins, and let Docker handle build.
                     }
                 }
 

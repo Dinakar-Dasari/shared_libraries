@@ -59,7 +59,7 @@ def call(Map configMap){
 
                 stage('test') {
                     steps{
-                        echo "run test cases"
+                        echo "npm test"
                     }
                 }
 
